@@ -8,6 +8,12 @@ socketio = flask_socketio.SocketIO(app)
 def hello():
     return 'Hello, world!'
 
+@socketio.on('connect')
+def on_connect():
+    socketio.emit('server says hello', {
+        'message': 'Hello, client!'
+    })
+
 if __name__ == '__main__':
     socketio.run(
         app,

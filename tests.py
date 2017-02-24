@@ -23,6 +23,15 @@ class StringSplitTestCase(unittest.TestCase):
         result = '        '.split()
         self.assertEqual(len(result), 0)
 
+class FizzBuzzTest(unittest.TestCase):
+    def test_fifteen(self):
+        r = random_functions.fizzBuzz(15)
+        self.assertEqual(r, "FizzBuzz")
+
+    def test_zero(self):
+        r = random_functions.fizzBuzz(0)
+        self.assertEqual(r, "FizzBuzz")
+
     # def test_bad_spaces_string(self):
     #     result = '        '.split()
     #     self.assertEqual(len(result), 1)
