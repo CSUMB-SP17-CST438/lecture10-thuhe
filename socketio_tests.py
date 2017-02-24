@@ -7,7 +7,12 @@ class SocketIOTests(unittest.TestCase):
         r = client.get_received()
         server_msg = r[0]
         self.assertEquals(server_msg['name'], 'server says hello')
-        print server_msg
+        data = server_msg['args'][0]
+        self.assertEquals(data['message'], 'Hello, client!')
+
+    def test_emit(self):
+        client = app.socketio.test_client(app.app)
+        r = client.get_received()
 
 if __name__ == '__main__':
     unittest.main()

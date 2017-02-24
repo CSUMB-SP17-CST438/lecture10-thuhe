@@ -8,10 +8,19 @@ socketio = flask_socketio.SocketIO(app)
 def hello():
     return 'Hello, world!'
 
+@socketio.on('new massage')
+def on_new_massage(data):
+    socketio.emit('server sends data back', {
+        'from server': data['massage']
+    })
+
 @socketio.on('connect')
 def on_connect():
+    potato()
+
+def potato():
     socketio.emit('server says hello', {
-        'message': 'Hello, potato client!'
+        'message': 'Hello, client!'
     })
 
 if __name__ == '__main__':
