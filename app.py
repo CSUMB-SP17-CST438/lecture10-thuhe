@@ -11,7 +11,7 @@ def hello():
 @socketio.on('connect')
 def on_connect():
     socketio.emit('server says hello', {
-        'message': 'Hello, client!'
+        'message': 'Hello, potato client!'
     })
 
 if __name__ == '__main__':
