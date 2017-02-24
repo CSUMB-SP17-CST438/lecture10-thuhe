@@ -7,3 +7,9 @@ def fizzBuzz(n):
 		return 'Buzz'
 	else:
 		return str(n)
+
+def get_chatbot_response(message):
+    if message[:2] == '!!':
+        return 'Woosh'
+    else:
+        return 'Not a command'

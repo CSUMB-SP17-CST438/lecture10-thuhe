@@ -1,6 +1,14 @@
 import unittest
 import random_functions
 
+class ChatbotResponseTest(unittest.TestCase):
+    def test_command(self):
+        r = random_functions.get_chatbot_response('!! potato')
+        self.assertEqual('Woosh', r)
+
+    # def fasdfssdfsdtest_not_a_command(self):
+
+
 class StringSplitTestCase(unittest.TestCase):
     def test_bat_man(self):
         s = 'bat man'
