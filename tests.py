@@ -6,7 +6,9 @@ class ChatbotResponseTest(unittest.TestCase):
         r = random_functions.get_chatbot_response('!! potato')
         self.assertEqual('Woosh', r)
 
-    # def fasdfssdfsdtest_not_a_command(self):
+    def test_not_a_command(self):
+        r = random_functions.get_chatbot_response('potato')
+        self.assertEqual('Not a command', r)
 
 
 class StringSplitTestCase(unittest.TestCase):
