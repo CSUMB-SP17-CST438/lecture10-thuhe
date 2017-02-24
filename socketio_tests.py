@@ -18,6 +18,7 @@ class SocketIOTests(unittest.TestCase):
         r = client.get_received()
         result = r[1]
         self.assertEquals(result['name'], 'server sends data back')
+        self.assertEquals(result['args'][0]['from server'], 'This is my client massage')
 
 if __name__ == '__main__':
     unittest.main()

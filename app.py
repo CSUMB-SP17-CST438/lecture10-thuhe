@@ -11,7 +11,7 @@ def hello():
 @socketio.on('new massage')
 def on_new_massage(data):
     socketio.emit('server sends data back', {
-        'from server': data['massage']
+        'from server': data
     })
 
 @socketio.on('connect')
